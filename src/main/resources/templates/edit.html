@@ -3,31 +3,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Update User</title>
 </head>
 <body>
+<div align="center">
+    <br/><br/>
+    <br/><br/>
+    <h2>Update User</h2>
 
-<form th:method="PATCH" th:action="@{/admin/{id} (id=${user.getId()})}" th:object="${user}">
+    <form th:method="PATCH" th:action="@{/admin/{id} (id=${user.getId()})}" th:object="${user}">
 
-    <input type="hidden" name="_method" value="PATCH" />
+        <input type="hidden" name="_method" value="PATCH" />
 
-    <label for="UserName">Name: </label>
-    <input type="text" th:field="*{username}" id="username"/>
+        <label for="UserName">UserName: </label>
+        <input type="text" th:field="*{username}" id="username"/>
 
-    <br/>
-    <label for="email">Email: </label>
-    <input type="text" th:field="*{email}" id="email"/>
-    <br/>
+        <br/><br/>
+        <label for="email">Email: </label>
+        <input type="text" th:field="*{email}" id="email"/>
+        <br/><br/>
 
-    <label for="authorities">Authorities: </label>
-    <input type="text" th:field="*{authorities}" id="authorities"/>
-    <br/>
-    <input type="submit" value="Update"/>
+         <label for="password">Password</label>
+         <input type="text" th:field="*{password}" id="password"/>
+        <br/><br/>
 
-</form>
-<form action="/logout" th:align="center">
-    <button type="submit">Logout</button>
-</form>
+        <br/>
+
+        <input type="submit" value="Update"/>
+
+    </form>
+    <br/><br/>
+
+    <form action="/logout" th:align="center">
+        <button type="submit">Logout</button>
+    </form>
+
+</div>
 </body>
 </html>
